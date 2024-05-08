@@ -10,7 +10,7 @@ jobs:
   build: 
     runs-on: ubuntu-latest 
     steps: 
-    - uses: actions/checkout@v2 
+    - uses: actions/checkout@v3 
     - name: docker login 
       env: 
         DOCKER_USER: ${{secrets.DOCKERHUB_USER}} 
@@ -20,4 +20,4 @@ jobs:
     - name: Build the Docker image 
       run: docker build . --file Dockerfile --tag jecastrog/express-randomquotes:latest 
     - name: Docker Push 
-      run: docker push jecastrog/express-randomquote
+      run: docker push jecastrog/express-randomquotes:latest
